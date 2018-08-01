@@ -1,0 +1,73 @@
+1. What data types do each of these values represent?
+  1. String or VARCHAR
+  2. Integer or INTEGER
+  3. DATE
+  4. Float or DECIMAL
+  5. If you’re not including the ‘$’ sign, Float. SQL has a MONEY datatype for currency.
+
+2. Explain in your own words when a database might be used. Explain when a text file might be used.
+  A database can be used for so many things… like a calendar, budget, attendance, user information, movie times, etc.
+  A text file can be used for documentation, a ReadMe file, your diary, this assignment, etc.
+
+3. Describe one difference between SQL and other programming languages.
+  SQL is declarative. Most languages I’ve used up to this point are procedural.
+
+4. In your own words, explain how the pieces of a database system fit together at a high level.
+  The pieces of a database relate to one another based on values in columns and rows.
+
+5. Explain the meaning of table, row, column, and value.
+  A table is made up of rows and columns occupied by values.
+  Each row represents an object in a table.
+  A column divides each value type.
+  A value is what occupies the intersection of rows and columns and includes things like dates, payment amounts, usernames, etc.
+
+6. List 3 data types that can be used in a table.
+  Integer, Float, String  - or are you asking for SQL specific datatypes? In that case: INTEGER, VARCHAR, DATE
+
+7. Given this payments table, provide an English description of the following queries and include their results:
+  The first query is asking for all dates and amounts contained in the table payments:
+
+  date				              amount
+  2016-05-01T00:00:00.000Z	1500.0000
+  2016-05-10T00:00:00.000Z	37.0000
+  2016-05-15T00:00:00.000Z	124.9300
+  2016-05-23T00:00:00.000Z	54.7200
+
+  The second query is asking for amounts that are greater than 500 from the table payments:
+
+  amount
+  1500.0000
+
+  The third query is asking for all value types (i.e. from all columns) in the payments table where the payee = Mega Foods:
+
+  date				              payee		    amount		memo
+  2016-05-15T00:00:00.000Z	Mega Foods	124.9300	Groceries
+
+8. Given this users table, write SQL queries using the following criteria and include the output:
+  The email and sign-up date for the user named DeAndre Data:
+
+  SELECT email, signup
+  FROM users
+  WHERE name = 'DeAndre Data';
+
+  email			        signup
+  datad@comcast.net	2008-01-20T00:00:00.000Z
+
+  The user ID for the user with email 'aleesia.algorithm@uw.edu':
+
+  SELECT userid
+  FROM users
+  WHERE email = 'aleesia.algorithm@uw.edu';
+
+  userid
+  1
+
+
+  All the columns for the user ID equal to 4:
+
+  SELECT *
+  FROM users
+  WHERE userid = 4;
+
+  userid	 name		         email			        signup
+  4		     Brandy Boolean	 bboolean@nasa.gov	1999-10-15T00:00:00.000Z
